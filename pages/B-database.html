@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/data.css">
+    <link rel="stylesheet" href="../css/topbar.css">
+</head>
+<body>
+    <body>
+        <div id="topbar-container"></div>
+        <div class="container">
+            <div class="content-wrapper">
+                <div id="featured-photo" class="hidden"></div>
+                <div class="photo-gallery">
+                    <div class="column">
+                        <div class="photo" data-text="1-GENERATION&#10;CITYXCITY">
+                            <img src="../images/gen/B/B-01.png" alt="Image 1">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="1-GENERATION CITYXCITY">
+                            <img src="../images/gen/B/B-02.png" alt="Image 2">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="1-GENERATION CITYXCITY">
+                           <img src="../images/gen/B/B-03.png" alt="Image 3">
+                           <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="1-GENERATION CITYXCITY">
+                            <img src="../images/gen/B/B-04.png" alt="Image 4">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="1-GENERATION CITYXCITY">
+                            <img src="../images/gen/B/B-05.png" alt="Image 1">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="1-GENERATION CITYXCITY">
+                            <img src="../images/gen/B/B-06.png" alt="Image 2">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                           <img src="../images/gen/B/B-07.png" alt="Image 3">
+                           <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-08.png" alt="Image 4">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-09.png" alt="Image 1">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="1-GENERATION CITYXCITY">
+                            <img src="../images/gen/B/B-10.png" alt="Image 2">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="1-GENERATION CITYXCITY">
+                           <img src="../images/gen/B/B-11.png" alt="Image 3">
+                           <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-12.png" alt="Image 4">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-13.png" alt="Image 1">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-14.png" alt="Image 2">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                           <img src="../images/gen/B/B-15.png" alt="Image 3">
+                           <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-16.png" alt="Image 4">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-17.png" alt="Image 1">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-18.png" alt="Image 2">
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                           <img src="../images/gen/B/B-19.png" alt="Image 3">
+                           <div class="overlay"></div>
+                        </div>
+                        <div class="photo" data-text="2-GENERATION CITYXBRAND">
+                            <img src="../images/gen/B/B-20.png" alt="Image 4">
+                            <div class="overlay"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="text-display"></div> 
+        </div>
+        </div>
+        <script src="../js/data.js"></script>
+        <script>
+            fetch('topbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('topbar-container').innerHTML = data;
+                });
+        </script>
+    </body>
+</html>

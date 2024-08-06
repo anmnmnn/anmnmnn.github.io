@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Carousel Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <main>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="images/out256_00_00.jpg" alt="00 00"/></div>
+                <div class="swiper-slide">
+                    <img src="images/out256_00_01.jpg" alt="00 01"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/out256_00_02.jpg" alt="00 02"/>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            
+        </div>
+    </main>
+
+    <script type="text/javascript">
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'vertical',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay:{
+                delay:50000,
+                pauseOnMouseEnter: true
+            },
+            
+        });
+
+    </script>
+
+</body>
+
+</html>

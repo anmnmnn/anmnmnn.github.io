@@ -1,0 +1,189 @@
+:root {
+  --gap: 15px;
+  --blue: #0000FF;
+  --sub-header-font-family: 'Inter', sans-serif;
+  --transition-time: 0.3s;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  transition: transform var(--transition-time) ease;
+  position: relative;
+}
+
+/* 2. 縮小照片尺寸，5x4 置中矩陣 */
+.photo-gallery {
+  flex: 0 1 auto;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: var(--gap);
+  max-width: 1000px;
+  margin: auto;
+  transition: transform var(--transition-time) ease;
+}
+
+/* 3. 調整照片間距 */
+.column {
+  display: contents;
+}
+
+.photo {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 防止放大時溢出 */
+  position: relative; /* 為絕對定位的子元素提供參考 */
+  transition: filter var(--transition-time) ease;
+
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 5px;
+  transition: transform 0.5s ease; /* 添加過渡效果 */
+  transition: mix-blend-mode var(--transition-time) ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blueviolet;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity var(--transition-time) ease;
+}
+
+.content-wrapper.show-featured .photo .overlay {
+  opacity: 1;
+}
+
+#featured-photo {
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 41.53%;
+  height: auto;
+  opacity: 0;
+  transition: opacity var(--transition-time) ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5; /* 確保大圖在文字下方 */
+}
+
+#featured-photo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.content-wrapper.show-featured .photo-gallery {
+  transform: translateX(41%); /* 調整這個值以適應左側大圖 */
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.content-wrapper.show-featured .photo img {
+  mix-blend-mode: difference;
+}
+
+#featured-photo.show {
+  opacity: 1;
+}
+
+
+/* 4. 文字樣式調整 */
+#text-display {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: var(--sub-header-font-family);
+  font-size: 24px;
+  color: var(--blue);
+  height: 80%;
+  display: flex;
+  align-items: center;
+  white-space: pre-wrap;
+  text-align: center;
+  transition: all var(--transition-time) ease;
+  z-index: 10;
+}
+
+.photo:hover img {
+  transform: scale(1.25); /* 當 hover 時放大到 125% */
+}
+
+.content-wrapper.show-featured #text-display {
+  font-size: 80px;
+  color: rgb(0, 255, 34);
+  mix-blend-mode: difference;
+
+}
+
+/* 響應式設計 */
+@media (max-width: 1200px) {
+  .photo-gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .photo-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .photo-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(20, 1fr);
+  }
+}

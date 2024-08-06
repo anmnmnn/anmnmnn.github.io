@@ -1,67 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Changer</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MainPage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
-
-<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-    <div class="p-6 bg-white rounded shadow-md">
-        <h1 class="text-2xl font-bold mb-4">Change the Image</h1>
-        <div class="mb-4">
-            <label for="x-changer" class="block mb-2">X Coordinate:</label>
-            <input id="x-changer" type="number" min="0" max="99" class="w-full p-2 border border-gray-300 rounded" placeholder="Select X" value="00">
+<body>
+    <div class="main-page-1">
+        <div class="images-container" id="imagesContainer">
         </div>
-        <div class="mb-4">
-            <label for="y-changer" class="block mb-2">Y Coordinate:</label>
-            <input id="y-changer" type="number" min="0" max="99" class="w-full p-2 border border-gray-300 rounded" placeholder="Select Y" value="00">
+        <div class="container-1">
+            <div class="topbar">
+                <div class="frame-6">
+                    <span class="logo">AI X Creative Tech</span>
+                </div>
+                <div class="menu">
+                    <div class="project">
+                        <span class="project-1">Archive</span>
+                    </div>
+                    <div class="info">
+                        <span class="info-1">Info</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container-body">
+                <div class="container-3">
+                    <div class="title">
+                        LOS ANGELES<br>
+                        BANGKOK<br>
+                        TAIPEI
+                    </div>
+                </div>
+                <div class="container-4">
+                    <div class="container">
+                        <div class="title-1">
+                            X DUCATI <br>
+                            FLAGSHOP
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-6">
+                <span class="descrip">
+                    about developing contextual aesthetics from social media content...
+                </span>
+            </div>
         </div>
-        
-        <fieldset id="change-with-select" class="mb-4">
-            <label for="x-coord" class="block mb-2">X Coordinate Select</label>
-            <select id="x-coord" class="coord-select w-full p-2 border border-gray-300 rounded mb-4">
-                <option value="00">Zeroth</option>
-                <option value="01">First</option>
-                <option value="02">Second</option>
-                <option value="03">Third</option>
-                <option value="04">Fourth</option>
-                <option value="05">Fifth</option>
-                <option value="06">Sixth</option>
-                <option value="07">Seventh</option>
-                <option value="08">Eighth</option>
-                <option value="09">Ninth</option>
-                <option value="10">Tenth</option>
-                <option value="11">Eleventh</option>
-            </select>
-
-            <label for="y-coord" class="block mb-2">Y Coordinate Select</label>
-            <select id="y-coord" class="coord-select w-full p-2 border border-gray-300 rounded">
-                <option value="00">Zeroth</option>
-                <option value="01">First</option>
-                <option value="02">Second</option>
-                <option value="03">Third</option>
-                <option value="04">Fourth</option>
-                <option value="05">Fifth</option>
-                <option value="06">Sixth</option>
-                <option value="07">Seventh</option>
-                <option value="08">Eighth</option>
-                <option value="09">Ninth</option>
-                <option value="10">Tenth</option>
-                <option value="11">Eleventh</option>
-            </select>
-        </fieldset>
-
-        <button id="image-changer" class="w-full bg-blue-500 text-white p-2 rounded">Change Image</button>
-        
-        <div class="mt-4">
-            <img id="coord-image" src="images/out256_00_00.jpg" alt="Dynamic Image" class="w-64 h-64 object-cover">
-        </div>
+        <span class="title-2">CONTEXTUAL AESTHETIC DEVELOPMENT</span>
     </div>
-
-    <script src="script.js"></script>
+    <script src="../js/main.js"></script>
 </body>
-
 </html>
