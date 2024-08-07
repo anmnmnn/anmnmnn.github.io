@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function getRandomPosition() {
         return {
             x: Math.random() * window.innerWidth - window.innerWidth / 3,
-            y: Math.random() * window.innerHeight - window.innerHeight / 2
+            y: Math.random() * window.innerHeight - window.innerHeight / 3
         };
     }
 
