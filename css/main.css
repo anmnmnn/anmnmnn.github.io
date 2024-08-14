@@ -25,6 +25,66 @@ body, html {
   font-family: 'Inter', sans-serif;
 }
 
+#loader {
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.7s;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.city-container {
+  height: 3em;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.city {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  animation: fade-cities 1.5s linear 2;
+}
+
+.city:nth-child(1) { animation-delay: 0s; }
+.city:nth-child(2) { animation-delay: 0.5s; }
+.city:nth-child(3) { animation-delay: 1s; }
+
+.city{
+  font-size: 45px;
+  font-weight: bold;
+  color: transparent;
+  background: rgb(17, 0, 255);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.flagship {
+  font-size: 45px;
+  font-weight: bold;
+  color: transparent;
+  background: rgb(17, 0, 255);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes fade-cities {
+  0%, 33.33% { opacity: 1; }
+  33.34%, 100% { opacity: 0; }
+}
+
 .main-page-1 {
   background: #FFFFFF;
   width: 100%;
@@ -66,88 +126,30 @@ body, html {
   box-sizing: border-box;
 }
 
-.main-page-1 .logo {
-  overflow-wrap: break-word;
-  font-family: var(--sub-header-font-family);
-  font-weight: var(--sub-header-font-weight);
-  font-size: var(--sub-header-font-size);
-  color: var(--blue);
-}
 
-.main-page-1 .frame-6 {
+.header-container {
   display: flex;
-  box-sizing: border-box;
-}
-
-.main-page-1 .project-1, .main-page-1 .info-1 {
-  overflow-wrap: break-word;
-  font-family: var(--menu-link-font-family);
-  font-weight: var(--menu-link-font-weight);
-  font-size: var(--menu-link-font-size);
-  text-decoration-line: var(--menu-link-text-decorationLine);
-  color: var(--blue);
-}
-
-.main-page-1 .project, .main-page-1 .info {
-  display: flex;
-  box-sizing: border-box;
-}
-
-.main-page-1 .menu {
-  margin: 7px 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 168px;
-  height: fit-content;
-  box-sizing: border-box;
-}
-
-.main-page-1 .topbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
-  box-sizing: border-box;
-  padding: 0px 40px;
+  padding-top: 20px;
+  padding: 0 750px;
 }
 
-.main-page-1 .title {
-  position: relative;
-  margin: 0 0 44px 2.2px;
-  display: inline-block;
-  text-align: right;
-  overflow-wrap: break-word;
-  font-family: var(--heading-font-family);
-  font-weight: var(--heading-font-weight);
-  font-size: var(--heading-font-size);
-  color: var(--blue);
+.main-page-1 .container-4 {
+  margin: 0;
+  padding: 0 10px;
 }
 
 .main-page-1 .title-1 {
-  margin-bottom: 173px;
-  display: inline-block;
-  align-self: flex-start;
+  margin: 0;
   text-align: center;
-  overflow-wrap: break-word;
-  font-family: var(--heading-font-family);
-  font-weight: var(--heading-font-weight);
-  font-size: var(--heading-font-size);
+}
+
+.main-page-1 .title-1 {
   color: var(--blue);
-}
-
-.main-page-1 .container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.main-page-1 .container-3 {
-  margin-right: 337.7px;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .main-page-1 .container-4 {
@@ -157,27 +159,22 @@ body, html {
   box-sizing: border-box;
 }
 
-.main-page-1 .container-body {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  box-sizing: border-box;
-}
-
 .main-page-1 .container-6 {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  text-align: right;
+  bottom: 830px;
+  left: 1565px;
+  text-align: left;
+
 }
 
 .main-page-1 .descrip {
   font-family: var(--mpargraphy-font-family);
   font-style: var(--mpargraphy-font-style);
   font-weight: var(--mpargraphy-font-weight);
-  font-size: var(--mpargraphy-font-size);
-  color: var(--blue);
+  font-size: 15px;
+  color: black;
   max-width: 300px;
+  line-height:1.2;
 }
 
 .main-page-1 .container-1 {
@@ -193,15 +190,16 @@ body, html {
 
 .main-page-1 .title-2 {
   position: absolute;
-  left: 90px;
-  top: 163px;
+  left: 10px;
+  top: 850px;
   overflow-wrap: break-word;
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 200;
-  font-size: 64px;
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  font-size: 40px;
   color: var(--blue);
 }
+
+
 /* 保留原有的浮動圖片樣式 */
 .floating-image-container {
   position: absolute;

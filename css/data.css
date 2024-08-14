@@ -12,6 +12,19 @@ html, body {
   overflow: hidden;
 }
 
+.page-container {
+  height: 200vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+
 body {
   display: flex;
   flex-direction: column;
@@ -23,21 +36,17 @@ body {
   box-sizing: border-box;
 }
 
-
 .container {
-  flex: 1;
-  display: flex;
+  height: 100%;
+  position: relative;
   overflow: hidden;
 }
 
 .content-wrapper {
-  display: flex;
-  width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  transition: transform var(--transition-time) ease;
-  position: relative;
 }
 
 /* 2. 縮小照片尺寸，5x4 置中矩陣 */
@@ -96,10 +105,10 @@ body {
 
 #featured-photo {
   position: absolute;
-  left: 2%;
+  left: 10.5%;
   top: 50%;
   transform: translateY(-50%);
-  width: 41.53%;
+  width: 35%;
   height: auto;
   opacity: 0;
   transition: opacity var(--transition-time) ease;
@@ -138,7 +147,7 @@ body {
   writing-mode: vertical-rl;
   font-family: var(--sub-header-font-family);
   font-size: 24px;
-  color: var(--blue);
+  color: rgb(0, 0, 255);
   height: 80%;
   display: flex;
   align-items: center;
@@ -153,10 +162,75 @@ body {
 }
 
 .content-wrapper.show-featured #text-display {
-  font-size: 80px;
+  font-size: 24px;
   color: rgb(0, 255, 34);
   mix-blend-mode: difference;
 
+}
+
+.city-background {
+  position: absolute;
+  left: 0;
+  bottom: 0; /* 从底部开始 */
+  transform-origin: left bottom; /* 改变变换原点 */
+  transform: rotate(-90deg) translateY(100%);
+  font-size: 10vw; /* 调整字体大小 */
+  font-weight: bold;
+  color: #000000;
+  white-space: nowrap;
+  z-index: -1;
+  pointer-events: none;
+  font-family: var(--sub-header-font-family);
+  letter-spacing: -0.05em;
+}
+
+.city-background a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.city-background a:hover {
+  color: var(--blue);
+}
+
+/* Adjust the content wrapper to make space for the background text */
+.content-wrapper {
+  margin-left: 2vw;  /* Adjust this value as needed */
+}
+
+.lower-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.lower-section .container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.lower-section .featured-image {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .city-background {
+    font-size: 30vw;  /* Larger text on smaller screens */
+  }
+  
+  .content-wrapper {
+    margin-left: 1vw;  /* Less margin on smaller screens */
+  }
 }
 
 /* 響應式設計 */

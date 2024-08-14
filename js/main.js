@@ -1,4 +1,44 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const cityNameElement = document.getElementById('cityName');
+    let cityNameTimeout;
+
+    function showCityName(cityName) {
+        cityNameElement.textContent = cityName;
+        cityNameElement.style.opacity = '1';
+        clearTimeout(cityNameTimeout);
+        cityNameTimeout = setTimeout(() => {
+            cityNameElement.style.opacity = '0';
+        }, 500);
+    }
+
+    function loadAndAnimateImages() {
+        config.folders.forEach(folder => {
+            const usedIndices = new Set();
+            for (let i = 0; i < config.imagesPerFolder; i++) {
+                // Existing image creation code...
+
+                imgContainer.addEventListener('mouseover', function() {
+                    let cityName = '';
+                    switch (folder) {
+                        case 'B':
+                            cityName = 'BANGKOK';
+                            break;
+                        case 'T':
+                            cityName = 'TAIPEI';
+                            break;
+                        case 'L':
+                            cityName = 'LOS ANGELES';
+                            break;
+                    }
+                    showCityName(cityName);
+                });
+
+                // Existing click event listener...
+            }
+        });
+    }
+
+
     const config = {
         basePath: 'images/gen/', // Base path
         folders: ['B', 'T', 'L'], // Subfolders
@@ -46,6 +86,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function loaderAnimation() {
+        var loader = document.querySelector("#loader");
+        setTimeout(function () {
+            loader.style.opacity = "0";
+            setTimeout(function() {
+                loader.style.display = "none";
+            }, 700); // 等待過渡效果完成
+        }, 3000);  // 更新為 6 秒（3秒動畫 * 2次重複）
+    }
+    loaderAnimation();
+
     function loadAndAnimateImages() {
         config.folders.forEach(folder => {
             const usedIndices = new Set();
@@ -71,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     gsap.set(imgContainer, {
                         x: startPos.x,
                         y: startPos.y,
-                        scale: 0.25 // Initial scale
+                        scale: 0.5 // Initial scale
                     });
                     moveImage(imgContainer);
                     imagesContainer.appendChild(imgContainer);
